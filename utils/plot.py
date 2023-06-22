@@ -8,6 +8,11 @@ def generate_wordcloud(cloud_input: Dict):
     plt.imshow(wordcloud)
     plt.savefig("products_worldcloud.png")
 
-def generate_sentiment_plot():
-    pass
+def generate_bar_plot(input_dict: Dict, title: str):
+    x = list(input_dict.keys())
+    y = list(input_dict.values())
+    plt.bar(x, y)
+    plt.xticks(rotation=90)
+    plt.show()
+    plt.savefig(f"{title}.png")
 

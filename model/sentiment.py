@@ -18,3 +18,11 @@ def get_sentiment(text):
     else:
         output = (sentiment_score['neu'], 'neutral')
     return output
+
+def extract_issue_text(text):
+    analyzer = SentimentIntensityAnalyzer()
+    sentiment_scores = analyzer.polarity_scores(text)
+    if sentiment_scores['compound'] < 0:
+        issues = [word for word in text.split() if analyzer.polarity_scores(word)['compound'] < 0]
+        issue_text = ', '.join(issues)
+    return issue_text
