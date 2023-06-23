@@ -1,0 +1,9 @@
+data:
+  file: "data/reviews.txt"
+
+model:
+  english_model:  "en_core_web_sm"
+
+ner_entity:
+  entity_name: "PRODUCT"
+

@@ -13,6 +13,7 @@ def generate_bar_plot(input_dict: Dict, title: str):
     y = list(input_dict.values())
     plt.bar(x, y)
     plt.xticks(rotation=90)
+    plt.title(title)
     plt.show()
     plt.savefig(f"{title}.png")
 
