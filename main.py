@@ -73,7 +73,7 @@ def extract_positives(reviews):
             positives.extend(plus_text)
         positives.extend(plus_text)
     word_counter = Counter(positives)
-    print(word_counter)
+    # print(word_counter)
     generate_wordcloud(word_counter, "positives_wordcloud")
     return plus_list
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     raw_data = read_text_file(config["data"]["file"])
     list_of_reviews, number_of_reviews = separate_reviews(raw_data)
     preprocessed_text =  preprocess_review_data(list_of_reviews)
-    # product_names, product_counter = extract_product_insights(preprocessed_text, config["model"]["english_model"])
+    product_names, product_counter = extract_product_insights(preprocessed_text, config["model"]["english_model"])
     sentiment_list = extract_product_sentiment(preprocessed_text)
     negative_reviews = extract_negative_reviews(sentiment_list)
     issues_list = extract_issue(negative_reviews)
