@@ -33,6 +33,7 @@ class SentimentAnalysis:
 
     def get_sentiment(self, text):
         sentiment_score = self.analyzer.polarity_scores(text)
+        sentiment_score.pop('compound')
         sentiment = max(sentiment_score, key=sentiment_score.get)
         value = sentiment_score[sentiment]
         return sentiment, value
@@ -42,4 +43,4 @@ class SentimentAnalysis:
         if sentiment_scores['compound'] < 0:
             issues = [word for word in text.split() if self.analyzer.polarity_scores(word)['compound'] < 0]
             issue_text = ', '.join(issues)
-        return issue_text
+            return issue_text

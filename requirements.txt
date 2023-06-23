@@ -3,3 +3,5 @@ spacy
 vaderSentiment
 matplotlib
 seaborn
+tqdm
+pandas

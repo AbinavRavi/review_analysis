@@ -11,6 +11,7 @@ def generate_wordcloud(cloud_input: Dict):
 def generate_bar_plot(input_dict: Dict, title: str):
     x = list(input_dict.keys())
     y = list(input_dict.values())
+    plt.figure(figsize=(20,10))
     plt.bar(x, y)
     plt.xticks(rotation=90)
     plt.title(title)

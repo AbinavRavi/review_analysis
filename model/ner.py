@@ -25,7 +25,7 @@ class NamedEntityRecognition:
         return doc
     
     def extract_product_names(self,review_text):
-        self.nlp.add_pipe("add_product_entities", after="ner")
+        # self.nlp.add_pipe("add_product_entities", after="ner")
         doc = self.nlp(review_text)
         product_names = []
         for ent in doc.ents:
